@@ -39,7 +39,7 @@ class IProtocol
 private:
 	std::thread::id current_thread;
 
-	//Aktualnie zaimplementowane i obs³ugiwane protoko³y
+	//Aktualnie zaimplementowane i obsÅ‚ugiwane protokoÅ‚y
 	inline static std::map<DeviceProtocol, std::string> protocols{
 			 {DeviceProtocol::Posnet,"POSNET"}
 			,{DeviceProtocol::Thermal,"THERMAL"}
@@ -57,7 +57,7 @@ protected:
 
 	std::shared_mutex set_receipt_mutex;
 
-	#pragma region Zarz¹dzanie komunikacj¹ECR<->FISCAL
+	#pragma region ZarzÄ…dzanie komunikacjÄ…ECR<->FISCAL
 
 	std::mutex answer_mutex;
 	std::condition_variable answer_condition;
@@ -95,10 +95,10 @@ protected:
 			//);
 		}
 		if (COMPARE_TYPE(request, XMLGetFeature)) {
-			return 0; //getProperties(nullptr, 0); //odbiór callback-iem
+			return 0; //getProperties(nullptr, 0); //odbiÃ³r callback-iem
 		}
 		if (COMPARE_TYPE(request, XMLInfoCash)) {
-			return 0; // getMappingVat(nullptr, 0); //odbiór callback-iem
+			return 0; // getMappingVat(nullptr, 0); //odbiÃ³r callback-iem
 		}
 		if (COMPARE_TYPE(request, XMLCashDocument)) {
 			XMLCashDocument* r = CAST_TYPE(request, XMLCashDocument);
@@ -146,20 +146,20 @@ public:
 		std::cout << "Destructor " << __FUNCTION__ << std::endl;
 	}
 
-	#pragma region Zarz¹dzanie statusami i odpowiedziami
+	#pragma region ZarzÄ…dzanie statusami i odpowiedziami
 
 	/**
 	 * @brief
-	 * W pierwszej kolejnoœci zerujemy odpowiedŸ \p answer i ustawiamy status \p requestState, nastêpnie \n
-	 * czekamy na odpowiedŸ z ECR, która przyjdzie metod¹ SetAnswer.\n
+	 * W pierwszej kolejnoÅ›ci zerujemy odpowiedÅº \p answer i ustawiamy status \p requestState, nastÄ™pnie \n
+	 * czekamy na odpowiedÅº z ECR, ktÃ³ra przyjdzie metodÄ… SetAnswer.\n
 	 * Po otrzymaniu odpowiedzi lub timeout-u, status jest przywracany do poprzedniego stanu.\n
-	 * Przywrócenie statusu jest potrzebne jedynie po to, aby ECR nie ponawia³ tej samej akcji.\n
-	 * Ma³o prawdopodobne, ¿e po udzieleniu odpowiedzi przez ECR, a przed przywróceniem status
-	 * nast¹pi kolejne jego ponowne pobranie. Dlatego w pêtli ECR odbioru statusu i rezultatu
-	 * powinno stosowaæ siê minimalny sleep na poziome 100 ms.
-	 * @param requestState status pytania, na które ma zareagowaæ ECR
+	 * PrzywrÃ³cenie statusu jest potrzebne jedynie po to, aby ECR nie ponawiaÅ‚ tej samej akcji.\n
+	 * MaÅ‚o prawdopodobne, Å¼e po udzieleniu odpowiedzi przez ECR, a przed przywrÃ³ceniem status
+	 * nastÄ…pi kolejne jego ponowne pobranie. Dlatego w pÄ™tli ECR odbioru statusu i rezultatu
+	 * powinno stosowaÄ‡ siÄ™ minimalny sleep na poziome 100 ms.
+	 * @param requestState status pytania, na ktÃ³re ma zareagowaÄ‡ ECR
 	 * @param timeout czas oczekiwania w milisekundach
-	 * @return true/false jeœli doczekaliœmy siê odpowiedzi (jeœli timeout==0 wówczas zawsze true)
+	 * @return true/false jeÅ›li doczekaliÅ›my siÄ™ odpowiedzi (jeÅ›li timeout==0 wÃ³wczas zawsze true)
 	*/
 	bool WaitForAnswer(FiscalStatus requestState, long long timeout = 60_sec) {
 		std::unique_lock<std::mutex> lock(answer_mutex);
@@ -236,9 +236,9 @@ public:
 
 	/**
 	 * \brief Meoda callback \n
-	   Zostanie zarejestrowana jedynie pod warunkiem, ¿e zadanie fiskalne jest wykonywane asynchronicznie.
-	 * \remarks Podtowane jest to problemami z dostêpem do pamiêci, dla œrodowiska FoxPro, przy wywo³ywaniu procedury. Problemem jest inny w¹tek uruchomieniowy.
-	 * \author Piotr Kuliñski (&copy;) 2024
+	   Zostanie zarejestrowana jedynie pod warunkiem, Å¼e zadanie fiskalne jest wykonywane asynchronicznie.
+	 * \remarks Podtowane jest to problemami z dostÄ™pem do pamiÄ™ci, dla Å›rodowiska FoxPro, przy wywoÅ‚ywaniu procedury. Problemem jest inny wÄ…tek uruchomieniowy.
+	 * \author Piotr KuliÅ„ski (&copy;) 2024
 	 * \date 2024-07-02
 	 * \param fun
 	 */
@@ -265,7 +265,7 @@ public:
 
 		check_code = paragon.CheckCode();
 		if (check_code == -1L || check_code == -2L) {
-			LOGGER_SS("B³¹d parsowania XML" << check_code);
+			LOGGER_SS("BÅ‚Ä…d parsowania XML" << check_code);
 			return nullptr;
 		}
 		return paragon;
@@ -273,7 +273,7 @@ public:
 
 	/**
 	 * @brief Wydruk niefiskalny na podstawie przekazanego XML-a
-	 * @param connection Po³¹czenie z urzadzeniem
+	 * @param connection PoÅ‚Ä…czenie z urzadzeniem
 	 * @param xml predefiniowany ml
 	 * @return \ref FiscalError
 	*/
@@ -281,9 +281,9 @@ public:
 
 	/**
 	 * @brief Wydruk fiskalny na podstawie przekazanego XML-a
-	 * @details W pierwszej kolejnoœci XML jest deserializowany i ew. uzupe³niany o brakuj¹ce a wymagane wyliczenia.
-	 * @author Piotr Kuliñski (&copy;) 2024
-	 * @param connection Po³¹czenie z urzadzeniem
+	 * @details W pierwszej kolejnoÅ›ci XML jest deserializowany i ew. uzupeÅ‚niany o brakujÄ…ce a wymagane wyliczenia.
+	 * @author Piotr KuliÅ„ski (&copy;) 2024
+	 * @param connection PoÅ‚Ä…czenie z urzadzeniem
 	 * @param xml predefiniowany ml
 	 * @return \ref FiscalError
 	*/
@@ -297,27 +297,27 @@ public:
 	virtual std::string GetErrorMessage(FiscalError error_code) {
 		std::stringstream ss; ss << "(" << static_cast<long>(error_code) << ") ";
 		switch (error_code) {
-			case FiscalError::PREPARE: {ss << "B³¹d parsowania odczytanych danych"; break; }
-			case FiscalError::PREPARE_VAT: {ss << "B³¹d parsowania odczytanych stawek VAT"; break; }
-			case FiscalError::COMMUNICATION: {ss << "Ogólny b³¹d komunikacji z urz¹dzeniem"; break; }
-			case FiscalError::COMMUNICATION_WRITE: {ss << "B³¹d zapisu do urz¹dzenia"; break; }
-			case FiscalError::COMMUNICATION_READ: {ss << "B³¹d odczytu z urz¹dzenia"; break; }
-			case FiscalError::CONFIGURATION: {ss << "Ogólny b³¹d konfiguracji"; break; }
-			case FiscalError::CONFIGURATION_INVALID: {ss << "B³¹d ustawienie konfiguracji"; break; }
-			case FiscalError::PROTOCOL: {ss << "B³¹d zwi¹zany z protoko³em"; break; }
-			case FiscalError::TIMEOUT: {ss << "Przekroczenie czasu obs³ugi"; break; }
-			case FiscalError::TIMEOUT_FISCAL: {ss << "Problem z wydrukiem paragonu\nprzekroczenie czasu obs³ugi\nanulowano"; break; }
-			case FiscalError::USER_REJECT: {ss << "U¿ytkownik odpowiedzia³ przecz¹co na pytanie FISCAL"; break; }
-			default: {ss << "Niezdefiniowany b³¹d"; break; }
+			case FiscalError::PREPARE: {ss << "BÅ‚Ä…d parsowania odczytanych danych"; break; }
+			case FiscalError::PREPARE_VAT: {ss << "BÅ‚Ä…d parsowania odczytanych stawek VAT"; break; }
+			case FiscalError::COMMUNICATION: {ss << "OgÃ³lny bÅ‚Ä…d komunikacji z urzÄ…dzeniem"; break; }
+			case FiscalError::COMMUNICATION_WRITE: {ss << "BÅ‚Ä…d zapisu do urzÄ…dzenia"; break; }
+			case FiscalError::COMMUNICATION_READ: {ss << "BÅ‚Ä…d odczytu z urzÄ…dzenia"; break; }
+			case FiscalError::CONFIGURATION: {ss << "OgÃ³lny bÅ‚Ä…d konfiguracji"; break; }
+			case FiscalError::CONFIGURATION_INVALID: {ss << "BÅ‚Ä…d ustawienie konfiguracji"; break; }
+			case FiscalError::PROTOCOL: {ss << "BÅ‚Ä…d zwiÄ…zany z protokoÅ‚em"; break; }
+			case FiscalError::TIMEOUT: {ss << "Przekroczenie czasu obsÅ‚ugi"; break; }
+			case FiscalError::TIMEOUT_FISCAL: {ss << "Problem z wydrukiem paragonu\nprzekroczenie czasu obsÅ‚ugi\nanulowano"; break; }
+			case FiscalError::USER_REJECT: {ss << "UÅ¼ytkownik odpowiedziaÅ‚ przeczÄ…co na pytanie FISCAL"; break; }
+			default: {ss << "Niezdefiniowany bÅ‚Ä…d"; break; }
 		}
 		return ss.str();
 	}
 
 	/**
-	 * \brief Wys³anie request definiuj¹cego dowolny typ wydruku.
-	 * \author Piotr Kuliñski (&copy;) 2024
+	 * \brief WysÅ‚anie request definiujÄ…cego dowolny typ wydruku.
+	 * \author Piotr KuliÅ„ski (&copy;) 2024
 	 * \date 2024-06-29
-	 * \param connection Po³¹czenie
+	 * \param connection PoÅ‚Ä…czenie
 	 * \param xml_request definicja wydruku
 	 * \return FiscalError
 	 */
