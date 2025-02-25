@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1250" standalone="yes"?>
+<Paragon>
+  <!-- optional (XmlApiConfigurationRequest)
+       <Connection type="0" name="COM23" baudrate="9600" databits="8" parity="N" flowcontrol="N"/>
+  -->
+  <!-- optional
+	   <Sterowanie>
+			<OtworzSzuflade>1</OtworzSzuflade>
+	   </Sterowanie>
+  -->
+  <Naglowek>
+	<Opisy>
+	  <Opis typ="1028" wartosc="HOSPITALITY POS"/>
+	  <Opis typ="1027" wartosc="SALES_1"/>
+	  <Opis typ="1005" wartosc="admin"/>
+	  <Opis typ="30" wartosc="R:15 Z:Szyb/8874"/>
+	  <Opis typ="1001" wartosc="15"/>
+	</Opisy>
+  </Naglowek>
+  <Linijki>
+	<!-- 
+		typ: typ linii, szczegóły w  ReceiptLineType
+		ilosc: ilość jednostkowa
+		jm: na razie nie obsługiwana
+		cena: cena jednostkowa brutto
+		opis: dodatkowa linia opisu, nie każdy protokół może ją obsłużyć, szczegóły w manifeście protokołu
+	-->
+	<Linijka typ="1" nazwa="8% Karnet Strefa Wellness B/J 10 x 2h" jm="szt" ilosc="1.0" ptu="8.0" cena="360.0" opis="8%_Bilet Wellness 2h"/>
+  </Linijki>
+  <Platnosci>
+	<Platnosc typ="2" kwota="360.0" nazwa=""/>
+  </Platnosci>
+  <Zaliczki>
+  </Zaliczki>
+</Paragon>

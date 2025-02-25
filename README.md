@@ -1,2 +1,2 @@
 # FC
-FiscalConnection
+FiscalConnection - wybiórczy przykłąd kodu

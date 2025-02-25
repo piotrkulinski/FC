@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<Connection
+  type="0|RS232"
+  name="COM1"
+  baudrate="115200"
+  databyte="8"
+  flowcontrol="N|R|D|S|F" <!-- opcjonalnie -->
+  parity="E|M|N|O"
+  protocol="POSNET"
+  uid="identyfikator fiskalny" <!-- zalecane uzupełnienie -->
+/>
+

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Configuration>
+	<WebService host="*" port="8085" endpoint="/api" ssl="false"/>
+	<Users>
+		<User email="piotr.kulinski@gmail.com" name="Piotr" lastname="Kuliński" password="JHh67%j$#8#JHJHGHJ@"/>
+		<User email="piotr.kulinski@outlook.com" name="Piotr" lastname="Kuliński" password="JHh67%j$#8#JHJHGHJ@"/>			
+	</Users>
+</Configuration>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<Lines MaxWidth="34">
+  <Line Param1="Left" Param2="Right" Param3="">
+    <Typ>1</Typ>
+    <Value1>POS ID: 34019165</Value1>
+    <Value2>Nr paragonu: 3116</Value2>
+    <Value3></Value3>
+  </Line>
+  <Line Param1="Left" Param2="" Param3="">
+    <Typ>2</Typ>
+    <Value1>MID: 000000000554729</Value1>
+    <Value2></Value2>
+    <Value3></Value3>
+  </Line>
+  <Line Param1="Left" Param2="Right" Param3="">
+    <Typ>3</Typ>
+    <Value1>************1863</Value1>
+    <Value2>Ważna do: /</Value2>
+    <Value3></Value3>
+  </Line>
+  <Line Param1="Left" Param2="" Param3="">
+    <Typ>4</Typ>
+    <Value1>AID: A0000000041010</Value1>
+    <Value2></Value2>
+    <Value3></Value3>
+  </Line>
+  <Line Param1="Left" Param2="" Param3="">
+    <Typ>5</Typ>
+    <Value1>DEBIT MASTERCARD (B)</Value1>
+    <Value2></Value2>
+    <Value3></Value3>
+  </Line>
+  <Line Param1="Left" Param2="" Param3="">
+    <Typ>5</Typ>
+    <Value1>Contactless</Value1>
+    <Value2></Value2>
+    <Value3></Value3>
+  </Line>
+  <Line Param1="Center Bold" Param2="" Param3="">
+    <Typ>6</Typ>
+    <Value1>Sprzedaż</Value1>
+    <Value2></Value2>
+    <Value3></Value3>
+  </Line>
+  <Line Param1="Left" Param2="Right" Param3="">
+    <Typ>7</Typ>
+    <Value1>KWOTA:</Value1>
+    <Value2>30,00 PLN</Value2>
+    <Value3></Value3>
+  </Line>
+  <Line Param1="Bold" Param2="" Param3="">
+    <Typ>12</Typ>
+    <Value1>RACHUNEK DLA SPRZEDAWCY</Value1>
+    <Value2></Value2>
+    <Value3></Value3>
+  </Line>
+  <Line Param1="Center" Param2="" Param3="">
+    <Typ>23</Typ>
+    <Value1>Proszę obciążyć mój rachunek</Value1>
+    <Value2></Value2>
+    <Value3></Value3>
+  </Line>
+  <Line Param1="Center" Param2="" Param3="">
+    <Typ>25</Typ>
+    <Value1>Podpis niewymagany</Value1>
+    <Value2></Value2>
+    <Value3></Value3>
+  </Line>
+  <Line Param1="Left" Param2="" Param3="">
+    <Typ>15</Typ>
+    <Value1>Kod autoryzacji: (1) 069164</Value1>
+    <Value2></Value2>
+    <Value3></Value3>
+  </Line>
+  <Line Param1="Left" Param2="" Param3="">
+    <Typ>16</Typ>
+    <Value1>ARQC: 55B553049C4B4D2F</Value1>
+    <Value2></Value2>
+    <Value3></Value3>
+  </Line>
+  <Line Param1="Left" Param2="Right" Param3="">
+    <Typ>17</Typ>
+    <Value1>DATA: 2023.02.14</Value1>
+    <Value2>GODZ: 16:26:36</Value2>
+    <Value3></Value3>
+  </Line>
+  <Line Param1="" Param2="" Param3="">
+    <Typ>24</Typ>
+    <Value1></Value1>
+    <Value2></Value2>
+    <Value3></Value3>
+  </Line>
+  <Line Param1="Center" Param2="" Param3="">
+    <Typ>23</Typ>
+    <Value1>Dziękuję</Value1>
+    <Value2></Value2>
+    <Value3></Value3>
+  </Line>
+</Lines>

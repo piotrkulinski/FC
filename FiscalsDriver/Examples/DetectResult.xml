@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<Detected>
+  <Devices>
+    <Device name="POSNET Thermal HS FV EJ Serial Port">
+      <Settings number="1" baudrate="115200" databits="8" stopbits="0" parity="E" flowcontrol="RTS/CTS"/>
+      <Physical name="POSNET Thermal HS FV EJ" protocol="THERMAL" version="6.03" uid="BEV13511565"/>
+      <Driver recomended="CFiscal" message="Należy przestawić prędkość portu w urządzeniu na 9600"/>
+    </Device>
+  </Devices>
+  <Result>1</Result>
+  <Message>Wykryto urządzenia fiskalne</Message>
+</Detected>
+

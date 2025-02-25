@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<Connection 
+    type="1|TCP" 
+    ip="192.168.8.3" 
+    port="800" 
+    protocol="POSNET"
+	uid="identyfikator fiskalny"
+ />
